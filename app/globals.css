@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -27,14 +29,29 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+.dark body {
+  background: #09090b;
+  color: #fafafa;
+}
+
+button,
+a {
+  outline-offset: 4px;
 }
 
 body {
   background: #ffffff;
   color: #18181b;
+  min-height: 100vh;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
 ::selection {
-  background: #18181b;
+  background:  #d97706;
   color: #ffffff;
 }
