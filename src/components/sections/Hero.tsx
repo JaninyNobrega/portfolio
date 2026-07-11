@@ -1,68 +1,82 @@
-"use client";
+import {
+  ArrowDown,
+  Download,
+  MapPin,
+} from "lucide-react";
 
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import {
+  FaGithub,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
-const links = [
-  { label: "Sobre", href: "#sobre" },
-  { label: "Experiência", href: "#experiencia" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Tecnologias", href: "#tecnologias" },
-  { label: "Contato", href: "#contato" },
-];
-
-export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export function Hero() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a
-          href="#inicio"
-          className="text-lg font-bold tracking-tight text-zinc-950"
-        >
-          Janiny Nóbrega
-        </a>
-
-        <nav className="hidden items-center gap-7 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-zinc-600 transition hover:text-zinc-950"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <button
-          type="button"
-          className="rounded-md p-2 text-zinc-700 md:hidden"
-          onClick={() => setMenuOpen((current) => !current)}
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-
-      {menuOpen && (
-        <nav className="border-t border-zinc-200 bg-white px-6 py-4 md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm font-medium text-zinc-700"
-              >
-                {link.label}
-              </a>
-            ))}
+    <section
+      id="inicio"
+      className="flex min-h-screen items-center border-b border-zinc-200 bg-zinc-50 pt-16"
+    >
+      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+        <div className="max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-700">
+            <MapPin size={16} />
+            Fortaleza, Ceará · Disponível para trabalho remoto
           </div>
-        </nav>
-      )}
-    </header>
+
+          <p className="mb-4 font-medium text-zinc-600">
+            Olá, sou Janiny Nóbrega.
+          </p>
+
+          <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight text-zinc-950 md:text-7xl">
+            Desenvolvedora Full Stack construindo soluções web úteis e
+            acessíveis.
+          </h1>
+
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-zinc-600 md:text-xl">
+            Desenvolvo aplicações utilizando React, Next.js, TypeScript,
+            Python e APIs REST. Tenho experiência com sistemas completos,
+            bancos de dados e soluções baseadas em Inteligência Artificial.
+          </p>
+
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#projetos"
+              className="inline-flex items-center gap-2 rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+            >
+              Ver projetos
+              <ArrowDown size={18} />
+            </a>
+
+            <a
+              href="/curriculo-janiny-nobrega.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
+            >
+              <Download size={18} />
+              Baixar currículo
+            </a>
+
+            <a
+              href="https://github.com/JaninyNobrega"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir GitHub de Janiny Nóbrega"
+              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white p-3 text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950"
+            >
+              <FaGithub size={20} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/janiny-nobrega-27506b106/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir LinkedIn de Janiny Nóbrega"
+              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white p-3 text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950"
+            >
+              <FaLinkedinIn size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
