@@ -44,25 +44,62 @@ const sizeClasses: Record<ButtonSize, string> = {
 const baseClasses =
   "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-offset-zinc-950";
 
-export function Button({
-  variant = "primary",
-  size = "default",
-  className = "",
-  children,
-  ...props
-}: ButtonProps) {
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+function buildClasses(
+  variant: ButtonVariant,
+  size: ButtonSize,
+  className: string,
+) {
+  return [
+    baseClasses,
+    variantClasses[variant],
+    sizeClasses[size],
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
 
-  if ("href" in props && props.href) {
+export function Button(props: ButtonProps) {
+  if ("href" in props && typeof props.href === "string") {
+    const {
+      href,
+      children,
+      variant = "primary",
+      size = "default",
+      className = "",
+      ...anchorProps
+    } = props;
+
+    const classes = buildClasses(variant, size, className);
+
     return (
-      <a className={classes} {...props}>
+      <a
+        href={href}
+        className={classes}
+        {...anchorProps}
+      >
         {children}
       </a>
     );
   }
 
+  const {
+    children,
+    variant = "primary",
+    size = "default",
+    className = "",
+    type = "button",
+    ...buttonProps
+  } = props;
+
+  const classes = buildClasses(variant, size, className);
+
   return (
-    <button className={classes} {...props}>
+    <button
+      type={type}
+      className={classes}
+      {...buttonProps}
+    >
       {children}
     </button>
   );
