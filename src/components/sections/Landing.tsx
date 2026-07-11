@@ -9,7 +9,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
-export function Hero() {
+export function Landing() {
   return (
     <section
   id="inicio"
@@ -47,8 +47,9 @@ export function Hero() {
             </a>
 
             <a
-              href="/curriculo-janiny-nobrega.pdf"
+              href="https://drive.google.com/file/d/1pBibuHW_PamCgDxMTpVI6z6lghmDZv9j/view?usp=sharing"
               download
+              target="_blank"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
             >
               <Download size={18} />

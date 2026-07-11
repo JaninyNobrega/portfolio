@@ -1,6 +1,6 @@
 import { About } from "@/src/components/sections/About";
 import { Contact } from "@/src/components/sections/Contact";
-import { Hero } from "@/src/components/sections/Hero"
+import { Landing } from "@/src/components/sections/Landing";
 import { Experience } from "@/src/components/sections/Experience";
 import { Projects } from "@/src/components/sections/Projects";
 import { Skills } from "@/src/components/sections/Skills";
@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
 
       <main>
-        <Hero />
+        <Landing />
         <About />
         <Experience />
         <Projects />
