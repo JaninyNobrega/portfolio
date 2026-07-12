@@ -3,6 +3,12 @@ import { Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/src/components/ui/Container";
 import { Button } from "@/src/components/ui/Button";
 
+const email = "janinynobrega@gmail.com";
+
+const gmailUrl =
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${email}` +
+  `&su=${encodeURIComponent("Contato pelo portfólio de Janiny Nóbrega")}`;
+
 export function Footer() {
   return (
     <footer className="border-t border-zinc-200 bg-white py-24 dark:border-zinc-800 dark:bg-zinc-950">
@@ -17,16 +23,19 @@ export function Footer() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Se você busca fortalecer uma equipe de desenvolvimento ou transformar uma ideia em um produto digital, entre em contato.
+            Se você busca fortalecer uma equipe de desenvolvimento ou
+            transformar uma ideia em um produto digital, entre em contato.
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button
-              href="mailto:janinynobrega@gmail.com"
+              href={gmailUrl}
+              target="_blank"
+              rel="noreferrer"
               variant="secondary"
               size="large"
             >
-              <Mail size={18} />
+              <Mail size={18} aria-hidden="true" />
               Enviar e-mail
             </Button>
 
