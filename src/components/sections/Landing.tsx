@@ -1,4 +1,4 @@
-import { ArrowDownRight, Circle } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 
 import { Badge } from "@/src/components/ui/Badge";
 import { Button } from "@/src/components/ui/Button";
@@ -21,11 +21,11 @@ export function Landing() {
     <Section
       id="inicio"
       spacing="small"
-      className="relative flex min-h-screen items-center overflow-hidden border-b border-zinc-200 bg-white pt-24 dark:border-zinc-800 dark:bg-zinc-950"
+      className="relative flex min-h-svh items-center overflow-hidden border-b border-zinc-200 bg-white pt-24 dark:border-zinc-800 dark:bg-zinc-950"
     >
       <Container
         size="wide"
-        className="relative flex min-h-[calc(100vh-8rem)] flex-col justify-center"
+        className="relative flex min-h-[calc(100svh-8rem)] flex-col justify-center pb-24"
       >
         <div
           aria-hidden="true"
@@ -42,7 +42,10 @@ export function Landing() {
             variant="outline"
             className="mb-8 gap-2 border-zinc-200 bg-white/70 px-4 py-2 text-zinc-600 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-950/70 dark:text-zinc-300"
           >
-            <span className="relative flex h-2 w-2">
+            <span
+              aria-hidden="true"
+              className="relative flex h-2 w-2"
+            >
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
 
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -75,34 +78,36 @@ export function Landing() {
               className="h-14 px-8 shadow-sm"
             >
               Conheça meu trabalho
-              <ArrowDownRight size={19} aria-hidden="true" />
+
+              <ArrowDownRight
+                size={19}
+                aria-hidden="true"
+              />
             </Button>
           </div>
 
-          <div
+          <ul
             className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3"
             aria-label="Principais tecnologias"
           >
             {technologies.map((technology) => (
-              <span
+              <li
                 key={technology}
                 className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 dark:text-zinc-500"
               >
-                <Circle
-                  size={6}
-                  fill="currentColor"
+                <span
                   aria-hidden="true"
-                  className="text-amber-500 dark:text-amber-400"
+                  className="h-1.5 w-1.5 rounded-full bg-amber-500 dark:bg-amber-400"
                 />
 
                 {technology}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:bottom-5">
-          <ScrollIndicator />
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-6">
+          <ScrollIndicator href="#projetos" />
         </div>
       </Container>
     </Section>
