@@ -14,9 +14,9 @@ export default function Home() {
 
       <main>
         <Landing />
+        <Projects />
         <About />
         <Experience />
-        <Projects />
         <Skills />
         <Contact />
       </main>
