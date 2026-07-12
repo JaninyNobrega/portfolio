@@ -55,3 +55,24 @@ body {
   background:  #d97706;
   color: #ffffff;
 }
+
+@keyframes scroll-indicator {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-indicator {
+    animation: none;
+  }
+}

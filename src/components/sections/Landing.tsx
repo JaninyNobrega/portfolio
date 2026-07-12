@@ -1,83 +1,72 @@
-import {
-  ArrowDown,
-  Download,
-  MapPin,
-} from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 
-import {
-  FaGithub,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { Button } from "@/src/components/ui/Button";
+import { Container } from "@/src/components/ui/Container";
+import { Heading } from "@/src/components/ui/Heading";
+import { Paragraph } from "@/src/components/ui/Paragraph";
+import { ScrollIndicator } from "@/src/components/ui/ScrollIndicator";
+import { Section } from "@/src/components/ui/Section";
 
 export function Landing() {
   return (
-    <section
-  id="inicio"
-  className="flex min-h-screen items-center border-b border-zinc-200 bg-zinc-50 pt-16 transition-colors dark:border-zinc-800 dark:bg-zinc-950"
->
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
-        <div className="max-w-4xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
-            <MapPin size={16} />
-            Fortaleza, Ceará · Disponível para trabalho remoto
+    <Section
+      id="inicio"
+      spacing="small"
+      className="relative flex min-h-screen items-center overflow-hidden border-b border-zinc-200 bg-white pt-24 dark:border-zinc-800 dark:bg-zinc-950"
+    >
+      <Container className="relative flex min-h-[calc(100vh-8rem)] flex-col justify-center">
+        <div
+          aria-hidden="true"
+          className="absolute -right-32 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-amber-300/10 blur-3xl dark:bg-amber-400/5"
+        />
+
+        <div className="relative max-w-5xl">
+          <div className="mb-8 flex items-center gap-4">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 text-sm font-semibold text-white dark:bg-white dark:text-zinc-950">
+              J
+            </span>
+
+            <div className="h-px w-12 bg-amber-500 dark:bg-amber-400" />
+
+            <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+              Janiny Nóbrega
+            </span>
           </div>
 
-          <p className="mb-4 dark:text-zinc-400 font-medium text-zinc-600">
-            Olá, sou Janiny Nóbrega.
-          </p>
+          <Heading
+            as="h1"
+            size="hero"
+            className="max-w-5xl text-balance"
+          >
+            Software que transforma problemas complexos em experiências
+            simples.
+          </Heading>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white md:text-7xl">
-            Desenvolvedora Full Stack construindo soluções web úteis e
-            acessíveis.
-          </h1>
+          <Paragraph
+            size="large"
+            className="mt-8 max-w-3xl text-pretty"
+          >
+            Desenvolvo aplicações Full Stack, produtos digitais e soluções
+            com Inteligência Artificial, combinando criatividade, elegância e
+            inteligência.
+          </Paragraph>
 
-          <p className="mt-7 dark:text-zinc-400 max-w-3xl text-lg leading-8 text-zinc-600 md:text-xl">
-            Desenvolvo aplicações utilizando React, Next.js, TypeScript,
-            Python e APIs REST. Tenho experiência com sistemas completos,
-            bancos de dados e soluções baseadas em Inteligência Artificial.
-          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Button href="#projetos" size="large">
+              Conheça meu trabalho
+              <ArrowDownRight size={18} aria-hidden="true" />
+            </Button>
 
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href="#projetos"
-              className="inline-flex dark:text-zinc-400 items-center gap-2 rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
-            >
-              Ver projetos
-              <ArrowDown size={18} />
-            </a>
-
-            <a
-              href="https://drive.google.com/file/d/1pBibuHW_PamCgDxMTpVI6z6lghmDZv9j/view?usp=sharing"
-              download
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
-            >
-              <Download size={18} />
-              Baixar currículo
-            </a>
-
-            <a
-              href="https://github.com/JaninyNobrega"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Abrir GitHub de Janiny Nóbrega"
-              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white p-3 text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
-            >
-              <FaGithub size={20} />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/janiny-nobrega-27506b106/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Abrir LinkedIn de Janiny Nóbrega"
-              className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white p-3 text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
-            >
-              <FaLinkedinIn size={20} />
-            </a>
+            <span className="text-sm text-zinc-500 dark:text-zinc-500">
+              Disponível para oportunidades remotas
+            </span>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-6">
+          <ScrollIndicator />
+        </div>
+      </Container>
+    </Section>
   );
 }
