@@ -72,7 +72,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-scroll-indicator {
+  .animate-scroll-indicator,
+  .animate-ping {
     animation: none;
   }
 }

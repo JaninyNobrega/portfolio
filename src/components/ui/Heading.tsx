@@ -11,7 +11,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const sizeClasses: Record<HeadingSize, string> = {
   hero:
-    "text-5xl leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl",
+     "text-5xl leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-[4.25rem]",
   section:
     "text-3xl leading-tight tracking-[-0.03em] sm:text-4xl lg:text-5xl",
   card: "text-xl leading-snug tracking-[-0.02em] sm:text-2xl",
