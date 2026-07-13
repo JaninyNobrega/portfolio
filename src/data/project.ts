@@ -2,30 +2,14 @@ import type { Project } from "@/src/types/project";
 
 export const projects: Project[] = [
   {
-    title: "EduAssist IA",
-    description:
-      "Assistente inteligente para apoiar professores da Educação Infantil na organização do planejamento pedagógico.",
-    challenge:
-      "Professores precisam organizar planos de aula alinhados à BNCC, reunindo objetivos, campos de experiência, materiais e atividades.",
-    solution:
-      "Desenvolvimento de uma aplicação que utiliza Inteligência Artificial generativa para estruturar sugestões de planos de aula, preservando a autonomia docente.",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "OpenAI API",
-    ],
-    featured: true,
-  },
-  {
     title: "Job Insights",
+    category: "Análise de dados e desenvolvimento Full Stack",
     description:
-      "Aplicação para análise de vagas de tecnologia e identificação das competências mais demandadas pelo mercado.",
+      "Aplicação para análise de vagas de tecnologia, identificação de competências recorrentes e geração de indicadores sobre o mercado.",
     challenge:
-      "Grandes volumes de dados de vagas dificultam a identificação manual de tecnologias, cargos e tendências recorrentes.",
+      "Transformar um conjunto extenso de dados de vagas em informações compreensíveis sobre cargos, tecnologias e competências mais demandadas.",
     solution:
-      "Construção de uma API para processamento e análise dos dados, geração de indicadores, gráficos e relatórios em PDF.",
+      "Desenvolvimento de uma API para processamento e análise dos dados, com geração de gráficos, indicadores e relatórios em PDF.",
     technologies: [
       "Python",
       "FastAPI",
@@ -33,30 +17,47 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Matplotlib",
     ],
+    status: "published",
     liveUrl: "https://job-insights-vagas.netlify.app/",
     featured: true,
   },
   {
     title: "My Planner",
+    category: "Produtividade e organização pessoal",
     description:
-      "Aplicação Full Stack para organização de tarefas, compromissos e rotinas pessoais.",
+      "Aplicação Full Stack para organização de tarefas, compromissos e rotinas em uma interface simples e responsiva.",
     challenge:
-      "Organizar diferentes compromissos em uma interface simples, responsiva e acessível.",
+      "Centralizar diferentes compromissos e tarefas em uma experiência de uso clara, acessível e orientada à produtividade.",
     solution:
-      "Desenvolvimento de uma aplicação com gerenciamento de dados e interface orientada à produtividade.",
-    technologies: ["Next.js", "React", "Tailwind CSS", "MongoDB"],
+      "Construção de uma aplicação web com interface responsiva, gerenciamento de informações e persistência de dados.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "MongoDB",
+    ],
+    status: "published",
     liveUrl: "https://my-planner-murex.vercel.app/",
     featured: true,
   },
   {
-    title: "FreelaHub",
+    title: "EduAssist IA",
+    category: "Pesquisa aplicada e Inteligência Artificial",
     description:
-      "API REST para gerenciamento de usuários e projetos em uma plataforma de serviços freelancers.",
+      "Assistente inteligente desenvolvido para apoiar professores da Educação Infantil na organização do planejamento pedagógico.",
     challenge:
-      "Criar uma estrutura segura para cadastro, autenticação e gerenciamento de projetos.",
+      "Apoiar a estruturação de planos de aula alinhados à BNCC, reunindo campos de experiência, objetivos, materiais e vivências sem reduzir a autonomia docente.",
     solution:
-      "Implementação de uma API com autenticação JWT, persistência em banco de dados e documentação interativa.",
-    technologies: ["Python", "FastAPI", "PostgreSQL", "JWT", "Swagger"],
-    featured: false,
+      "Desenvolvimento de um protótipo que utiliza Inteligência Artificial generativa para organizar sugestões de planejamento pedagógico de maneira clara e editável.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "OpenAI API",
+    ],
+    status: "in-development",
+    caseStudyUrl: "#pesquisa",
+    featured: true,
   },
 ];

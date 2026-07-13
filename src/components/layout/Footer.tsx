@@ -11,7 +11,7 @@ const gmailUrl =
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-white py-24 dark:border-zinc-800 dark:bg-zinc-950">
+    <footer id="contato" className="border-t border-zinc-200 bg-white py-24 dark:border-zinc-800 dark:bg-zinc-950">
       <Container size="default">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600 dark:text-amber-400">
@@ -23,11 +23,17 @@ export function Footer() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Se você busca fortalecer uma equipe de desenvolvimento ou
-            transformar uma ideia em um produto digital, entre em contato.
+            Se meu trabalho despertou seu interesse, ficarei feliz em conversar
+            sobre oportunidades, projetos ou novos desafios.
           </p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <div className="mx-auto max-w-3xl mt-6 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600 dark:text-amber-400">
+            Contato
+          </p>
+          
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            
             <Button
               href={gmailUrl}
               target="_blank"
@@ -48,6 +54,7 @@ export function Footer() {
               <MessageCircle size={18} />
               Conversar no WhatsApp
             </Button>
+          </div>
           </div>
 
           <div className="mt-20 border-t border-zinc-200 pt-8 dark:border-zinc-800">
