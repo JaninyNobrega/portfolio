@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Janiny Nóbrega | Desenvolvedora Full Stack",
   description: "Portfólio profissional de Janiny Nóbrega, desenvolvedora Full Stack com React, Next.js, TypeScript, Python e Inteligência Artificial.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
