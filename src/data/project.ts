@@ -53,7 +53,7 @@ export const projects: Project[] = [
   {
     title: "EduAssist IA",
     category: "research",
-    categoryLabel: "Pesquisa aplicada · Inteligência Artificial (em desenvolvimento)",
+    categoryLabel: "Pesquisa aplicada · Inteligência Artificial",
     description:
       "Assistente inteligente desenvolvido para apoiar professores da Educação Infantil na organização do planejamento pedagógico.",
     challenge:
