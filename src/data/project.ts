@@ -23,6 +23,7 @@ export const projects: Project[] = [
     imageAlt:
       "Profissional analisando indicadores e tendências de vagas de tecnologia em um ambiente digital.",
     liveUrl: "https://job-insights-vagas.netlify.app/",
+    repositoryUrl: "https://github.com/JaninyNobrega/job-insights",
     featured: true,
   },
   {
@@ -46,12 +47,13 @@ export const projects: Project[] = [
     imageAlt:
       "Ambiente de trabalho organizado com notebook exibindo uma aplicação de planejamento de tarefas.",
     liveUrl: "https://my-planner-murex.vercel.app/",
+    repositoryUrl: "https://github.com/JaninyNobrega/my-planner",
     featured: true,
   },
   {
     title: "EduAssist IA",
     category: "research",
-    categoryLabel: "Pesquisa aplicada · Inteligência Artificial",
+    categoryLabel: "Pesquisa aplicada · Inteligência Artificial (em desenvolvimento)",
     description:
       "Assistente inteligente desenvolvido para apoiar professores da Educação Infantil na organização do planejamento pedagógico.",
     challenge:
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     imageAlt:
       "Professora e crianças em sala de aula utilizando uma solução de inteligência artificial para planejamento pedagógico.",
     caseStudyUrl: "#pesquisa",
+    repositoryUrl: "https://github.com/JaninyNobrega/eduassistia",
     featured: true,
   },
   {
