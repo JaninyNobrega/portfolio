@@ -64,7 +64,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: "WORKGTREACT",
+    title: "WORK GT React",
     category: "collaborative",
     categoryLabel: "Projeto colaborativo · Geração Tech",
     description:

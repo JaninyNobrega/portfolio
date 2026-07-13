@@ -11,20 +11,29 @@ const statusLabels = {
   published: "Aplicação publicada",
   "in-development": "Em desenvolvimento",
   research: "Pesquisa aplicada",
-};
+} as const;
 
 const categoryStyles = {
   authorial: "neutral",
   research: "accent",
   collaborative: "outline",
 } as const;
+
 interface ProjectCardProps {
   project: Project;
   index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  index,
+}: ProjectCardProps) {
   const projectNumber = String(index + 1).padStart(2, "0");
+
+  const hasLinks =
+    Boolean(project.liveUrl) ||
+    Boolean(project.repositoryUrl) ||
+    Boolean(project.caseStudyUrl);
 
   return (
     <article className="group grid gap-8 border-t border-zinc-200 py-12 first:border-t-0 dark:border-zinc-800 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16 lg:py-16">
@@ -35,38 +44,42 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {project.featured && (
           <div className="mt-5">
-            <Badge variant="accent">Projeto em destaque</Badge>
+            <Badge variant="accent">
+              Projeto em destaque
+            </Badge>
           </div>
         )}
       </div>
-      <div className="flex flex-wrap items-center gap-3">
-        <Badge variant={categoryStyles[project.category]}>
-          {project.categoryLabel}
-        </Badge>
-
-        <Badge variant={project.status === "published" ? "neutral" : "accent"}>
-          {statusLabels[project.status]}
-        </Badge>
-      </div>
-
-      <Heading
-        as="h3"
-        size="card"
-        className="mt-5 transition-colors group-hover:text-amber-700 dark:group-hover:text-amber-400"
-      >
-        {project.title}
-      </Heading>
 
       <div>
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge variant={categoryStyles[project.category]}>
+            {project.categoryLabel}
+          </Badge>
+
+          <Badge
+            variant={
+              project.status === "published"
+                ? "neutral"
+                : "accent"
+            }
+          >
+            {statusLabels[project.status]}
+          </Badge>
+        </div>
+
         <Heading
           as="h3"
           size="card"
-          className="transition-colors group-hover:text-amber-700 dark:group-hover:text-amber-400"
+          className="mt-5 transition-colors group-hover:text-amber-700 dark:group-hover:text-amber-400"
         >
           {project.title}
         </Heading>
 
-        <Paragraph size="large" className="mt-4 max-w-3xl">
+        <Paragraph
+          size="large"
+          className="mt-4 max-w-3xl"
+        >
           {project.description}
         </Paragraph>
 
@@ -76,7 +89,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               O desafio
             </h4>
 
-            <Paragraph size="small" className="mt-3">
+            <Paragraph
+              size="small"
+              className="mt-3"
+            >
               {project.challenge}
             </Paragraph>
           </div>
@@ -86,18 +102,25 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               A solução
             </h4>
 
-            <Paragraph size="small" className="mt-3">
+            <Paragraph
+              size="small"
+              className="mt-3"
+            >
               {project.solution}
             </Paragraph>
           </div>
         </div>
+
         {project.contribution && (
           <div className="mt-7 rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
             <h4 className="text-sm font-semibold text-zinc-950 dark:text-white">
               Minha contribuição
             </h4>
 
-            <Paragraph size="small" className="mt-3">
+            <Paragraph
+              size="small"
+              className="mt-3"
+            >
               {project.contribution}
             </Paragraph>
           </div>
@@ -108,13 +131,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           aria-label={`Tecnologias utilizadas no projeto ${project.title}`}
         >
           {project.technologies.map((technology) => (
-            <Badge key={technology} variant="outline">
+            <Badge
+              key={technology}
+              variant="outline"
+            >
               {technology}
             </Badge>
           ))}
         </div>
 
-        {(project.liveUrl || project.repositoryUrl) && (
+        {hasLinks && (
           <div className="mt-8 flex flex-wrap gap-3">
             {project.liveUrl && (
               <Button
@@ -124,7 +150,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 variant="secondary"
               >
                 Ver aplicação
-                <ArrowUpRight size={17} aria-hidden="true" />
+
+                <ArrowUpRight
+                  size={17}
+                  aria-hidden="true"
+                />
               </Button>
             )}
 
@@ -135,14 +165,26 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noreferrer"
                 variant="ghost"
               >
-                <FaGithub size={17} aria-hidden="true" />
+                <FaGithub
+                  size={17}
+                  aria-hidden="true"
+                />
+
                 Ver código
               </Button>
             )}
+
             {project.caseStudyUrl && (
-              <Button href={project.caseStudyUrl} variant="secondary">
+              <Button
+                href={project.caseStudyUrl}
+                variant="secondary"
+              >
                 Conhecer a pesquisa
-                <ArrowUpRight size={17} aria-hidden="true" />
+
+                <ArrowUpRight
+                  size={17}
+                  aria-hidden="true"
+                />
               </Button>
             )}
           </div>
