@@ -19,6 +19,9 @@ export const projects: Project[] = [
       "Matplotlib",
     ],
     status: "published",
+    image: "/images/projects/job-insights.webp",
+    imageAlt:
+      "Profissional analisando indicadores e tendências de vagas de tecnologia em um ambiente digital.",
     liveUrl: "https://job-insights-vagas.netlify.app/",
     featured: true,
   },
@@ -39,6 +42,9 @@ export const projects: Project[] = [
       "MongoDB",
     ],
     status: "published",
+    image: "/images/projects/my-planner.webp",
+    imageAlt:
+      "Ambiente de trabalho organizado com notebook exibindo uma aplicação de planejamento de tarefas.",
     liveUrl: "https://my-planner-murex.vercel.app/",
     featured: true,
   },
@@ -60,6 +66,9 @@ export const projects: Project[] = [
       "OpenAI API",
     ],
     status: "in-development",
+    image: "/images/projects/eduassist.webp",
+    imageAlt:
+      "Professora e crianças em sala de aula utilizando uma solução de inteligência artificial para planejamento pedagógico.",
     caseStudyUrl: "#pesquisa",
     featured: true,
   },
@@ -83,12 +92,16 @@ export const projects: Project[] = [
       "Ant Design",
     ],
     status: "published",
+    image: "/images/projects/workgt.webp",
+    imageAlt:
+      "Notebook exibindo uma plataforma de comércio eletrônico moderna desenvolvida em React.",
     liveUrl: "https://workgtreact.vercel.app/",
-    repositoryUrl: "https://github.com/wullerbarros/WORKGTREACT",
+    repositoryUrl:
+      "https://github.com/wullerbarros/WORKGTREACT",
     featured: false,
   },
   {
-    title: "Análise de Churn de Clientes",
+    title: "Análise de Clientes de Cartão de Crédito",
     category: "collaborative",
     categoryLabel: "Projeto colaborativo · SENAC",
     description:
@@ -107,6 +120,9 @@ export const projects: Project[] = [
       "Matplotlib",
     ],
     status: "published",
+    image: "/images/projects/senac.webp",
+    imageAlt:
+      "Notebook exibindo um dashboard de análise de clientes de cartão de crédito e indicadores de churn.",
     repositoryUrl:
       "https://github.com/jnsbgood/SENAC-2601-PI-Grupo-30",
     liveUrl: "https://senac-dashboard-churn-grupo30.streamlit.app/",

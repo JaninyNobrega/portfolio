@@ -17,6 +17,8 @@ export interface Project {
   solution: string;
   technologies: string[];
   status: ProjectStatus;
+  image: string;
+  imageAlt: string;
   contribution?: string;
   liveUrl?: string;
   repositoryUrl?: string;

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
@@ -21,26 +22,28 @@ const categoryStyles = {
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
 export function ProjectCard({
   project,
-  index,
 }: ProjectCardProps) {
-  const projectNumber = String(index + 1).padStart(2, "0");
-
   const hasLinks =
     Boolean(project.liveUrl) ||
     Boolean(project.repositoryUrl) ||
     Boolean(project.caseStudyUrl);
 
   return (
-    <article className="group grid gap-8 border-t border-zinc-200 py-12 first:border-t-0 dark:border-zinc-800 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16 lg:py-16">
+    <article className="group grid gap-10 border-t border-zinc-200 py-14 first:border-t-0 dark:border-zinc-800 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16 lg:py-20">
       <div>
-        <span className="font-mono text-sm text-amber-600 dark:text-amber-400">
-          {projectNumber}
-        </span>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <Image
+            src={project.image}
+            alt={project.imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover transition duration-500 ease-out group-hover:scale-[1.025]"
+          />
+        </div>
 
         {project.featured && (
           <div className="mt-5">

@@ -5,9 +5,7 @@ import { SectionTitle } from "@/src/components/ui/SectionTitle";
 import { projects } from "@/src/data/project";
 
 export function Projects() {
-  const featuredProjects = projects.filter(
-    (project) => project.featured,
-  );
+  const featuredProjects = projects.filter((project) => project.featured);
 
   const collaborativeProjects = projects.filter(
     (project) => project.category === "collaborative",
@@ -27,12 +25,8 @@ export function Projects() {
         />
 
         <div className="mt-16">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-            />
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
 
@@ -44,12 +38,8 @@ export function Projects() {
           />
 
           <div className="mt-12">
-            {collaborativeProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                index={index}
-              />
+            {collaborativeProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>
