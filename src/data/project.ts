@@ -128,4 +128,41 @@ export const projects: Project[] = [
     liveUrl: "https://senac-dashboard-churn-grupo30.streamlit.app/",
     featured: false,
   },
+  {
+  title: "Animal Game",
+  category: "authorial",
+  categoryLabel: "Primeiro projeto · JavaScript",
+  description:
+    "Quiz interativo desenvolvido para consolidar conceitos fundamentais de JavaScript, manipulação do DOM e lógica de programação.",
+
+  challenge:
+    "Criar uma aplicação totalmente em JavaScript puro que proporcionasse uma experiência dinâmica ao usuário, sem utilização de frameworks.",
+
+  solution:
+    "Desenvolvimento de um quiz gamificado com sistema de pontuação, feedback visual, efeitos sonoros, animações e interface responsiva.",
+
+  contribution:
+    "Primeiro projeto front-end desenvolvido durante meus estudos, marcando minha transição para o desenvolvimento web.",
+
+  technologies: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+  ],
+
+  status: "published",
+
+  image: "/images/projects/animalgame.webp",
+
+  imageAlt:
+    "Ilustração representando um quiz interativo sobre animais.",
+
+  repositoryUrl:
+    "https://github.com/JaninyNobrega/animalgame",
+
+  liveUrl:
+    "https://animalgame-sage.vercel.app/",
+
+  featured: false,
+},
 ];

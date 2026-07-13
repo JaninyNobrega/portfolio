@@ -10,6 +10,9 @@ export function Projects() {
   const collaborativeProjects = projects.filter(
     (project) => project.category === "collaborative",
   );
+  const firstProjects = projects.filter(
+    (project) => project.title === "Animal Game",
+  );
 
   return (
     <Section
@@ -19,7 +22,7 @@ export function Projects() {
     >
       <Container size="wide">
         <SectionTitle
-          eyebrow="Projetos selecionados"
+          eyebrow="Cases"
           title="Soluções construídas a partir de problemas reais."
           description="Uma seleção de aplicações autorais, pesquisa aplicada e experiências de desenvolvimento em equipe."
         />
@@ -39,6 +42,19 @@ export function Projects() {
 
           <div className="mt-12">
             {collaborativeProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </div>
+        <div className="mt-24 border-t border-zinc-200 pt-16 dark:border-zinc-800">
+          <SectionTitle
+            eyebrow="Minha evolução"
+            title="Onde tudo começou."
+            description="Meu primeiro projeto em JavaScript marcou o início da minha jornada no desenvolvimento front-end e consolidou conceitos que utilizo até hoje."
+          />
+
+          <div className="mt-12">
+            {firstProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
